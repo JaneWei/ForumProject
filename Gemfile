@@ -7,8 +7,6 @@ gem 'rails', '3.2.6'
 
 gem 'heroku'
 
-#gem 'mysql2'
-
 group :development, :test do
 	gem 'mysql2'
 	gem 'rspec-rails'
