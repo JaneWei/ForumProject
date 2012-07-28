@@ -44,4 +44,17 @@ describe "StaticPages" do
 
 	end
 
+	describe "Conact Page" do
+
+		it "should have the title content 'Contact us" do
+			visit '/static_pages/contact'
+			page.should have_selector('title',:text => "Furious Tomato | contact us")
+		end
+
+		it "should have the h1 content 'contact us'" do
+			visit '/static_pages/contact'
+			page.should have_selector('h1', :text => "contact us")
+		end
+
+	end
 end
