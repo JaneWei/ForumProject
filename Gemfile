@@ -10,6 +10,7 @@ gem 'heroku'
 group :development, :test do
 	gem 'mysql2'
 	gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 gem 'json'
@@ -30,6 +31,8 @@ gem 'jquery-rails'
 
 group :test do
 	gem 'capybara'
+	gem 'rb-fsevent', :require => false
+	gem 'growl'
 end
 
 group :production do

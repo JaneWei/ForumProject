@@ -2,11 +2,13 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+	let(:baseTitle){ "Furious Tomato" }
+
   describe "Home Page" do
 
     it "should have the title content 'Furious Tomato'" do
       visit '/static_pages/home'
-			page.should have_selector('title', :text => "Furious Tomato | Home")
+			page.should have_selector('title', :text => "#{baseTitle} | Home")
     end
 		
 		it "should have the h1 content 'Home'" do
@@ -20,7 +22,7 @@ describe "StaticPages" do
 
 		it "shoudld have the title content 'Help'" do 
 			visit '/static_pages/help'
-			page.should have_selector('title', :text => "Furious Tomato | Help")
+			page.should have_selector('title', :text => "#{baseTitle} | Help")
 	  end
 
 		it "should have the h1 content 'Help'" do
@@ -34,7 +36,7 @@ describe "StaticPages" do
 
 		it "should have the title content 'About us" do
 			visit '/static_pages/about'
-			page.should have_selector('title',:text => "Furious Tomato | About us")
+			page.should have_selector('title',:text => "#{baseTitle} | About us")
 		end
 
 		it "should have the h1 content 'About us'" do
@@ -48,12 +50,12 @@ describe "StaticPages" do
 
 		it "should have the title content 'Contact us" do
 			visit '/static_pages/contact'
-			page.should have_selector('title',:text => "Furious Tomato | contact us")
+			page.should have_selector('title',:text => "#{baseTitle} | Contact us")
 		end
 
 		it "should have the h1 content 'contact us'" do
 			visit '/static_pages/contact'
-			page.should have_selector('h1', :text => "contact us")
+			page.should have_selector('h1', :text => "Contact us")
 		end
 
 	end
