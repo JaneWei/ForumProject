@@ -6,14 +6,19 @@ describe "StaticPages" do
 
   describe "Home Page" do
 
-    it "should have the title content 'Furious Tomato'" do
+    it "should have the base title content 'Furious Tomato'" do
       visit '/static_pages/home'
-			page.should have_selector('title', :text => "#{baseTitle} | Home")
+			page.should have_selector('title', :text => "#{baseTitle}")
     end
 		
-		it "should have the h1 content 'Home'" do
+		it "should have the h1 content 'Furious Tomato'" do
 			visit '/static_pages/home'
-			page.should have_selector('h1', :text => "Home")
+			page.should have_selector('h1', :text => "Furious Tomato")
+		end
+
+		it "should not have a custom page title" do 
+			visit '/static_pages/home'
+			page.should_not have_selector('title', :text => '| Home')
 		end
 
   end
