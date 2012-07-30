@@ -2,18 +2,21 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass', '2.0.0' #add bootstrap css library to it
+gem 'bcrypt-ruby', '3.0.1' #add this gem to finish encryption
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3', '1.3.6'
 gem 'heroku'
+
 group :development, :test do
 	gem 'mysql2'
 	gem 'rspec-rails'
   gem 'guard-rspec'
 end
 
+gem 'annotate', '2.5.0', group: :development
 gem 'json'
 
 # Gems used only for assets and not required
@@ -36,6 +39,7 @@ group :test do
 	gem 'growl'
 	gem 'guard-spork'
 	gem 'spork', '0.9.0' 
+  gem 'factory_girl_rails', '1.4.0'
 end
 
 group :production do
