@@ -13,6 +13,11 @@ $lightGray: #999;
   .navbar-inner {
     background-color: #FF9900;
     background-image: -moz-linear-gradient(center top , #FF6C00,#733);
+    background-image: -ms-linear-gradient(top, #FF6C00, #733);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF6C00), to(#733));
+    background-image: -webkit-linear-gradient(top, #FF6C00, #733);
+    background-image: -o-linear-gradient(top, #FF6C00, #733);
+    background-image: linear-gradient(top, #FF6C00, #733);
     background-repeat: repeat-x;
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
