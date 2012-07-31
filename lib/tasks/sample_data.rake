@@ -1,8 +1,8 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do#ensure that rake task has access to evn
-    admin = User.create!(name: "Yucheng Wang",
-                 email: "admin@silverspringnet.com",
+    admin = User.create!(name: "Admin",
+                 email: "internproject@hotmail.com",
                  password: "foobar",
                  password_confirmation: "foobar")
     admin.toggle!(:admin) 
