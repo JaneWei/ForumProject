@@ -1,7 +1,7 @@
 @import   "bootstrap";
 /* universal */
 /* define sass variable for website color */
-$lightGray: #999;
+$grayLighter: #999;
 /* $grayMediumLight: #eaeaea */
 
 @mixin box_sizing {
@@ -75,7 +75,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $lightGray;
+  color: $grayLighter;
 }
 
 p {
@@ -204,3 +204,18 @@ label {
   @extend .control-group;
   @extend .error;
  }
+  /* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
