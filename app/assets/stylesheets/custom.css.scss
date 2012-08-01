@@ -1,7 +1,7 @@
 @import   "bootstrap";
 /* universal */
 /* define sass variable for website color */
-$lightGray: #999;
+$grayLighter: #999;
 /* $grayMediumLight: #eaeaea */
 
 @mixin box_sizing {
@@ -9,7 +9,21 @@ $lightGray: #999;
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
-
+/* override the original design of bootstrap*/
+  .navbar-inner {
+    background-color: #FF9900;
+    background-image: -moz-linear-gradient(center top , #FF6C00,#733);
+    background-image: -ms-linear-gradient(top, #FF6C00, #733);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF6C00), to(#733));
+    background-image: -webkit-linear-gradient(top, #FF6C00, #733);
+    background-image: -o-linear-gradient(top, #FF6C00, #733);
+    background-image: linear-gradient(top, #FF6C00, #733);
+    background-repeat: repeat-x;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 html {
   overflow-y: scroll;
@@ -17,6 +31,13 @@ html {
 
 body {
   padding-top: 60px;
+	color: #FF6700;
+  a{
+  color: #FFA900;
+  &:hover{
+	    color: #FF5300;	
+		}
+  }
 }
 
 section {
@@ -38,6 +59,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+	color: #FF6700;
 }
 
 h1 {
@@ -53,7 +75,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $lightGray;
+  color: $grayLighter;
 }
 
 p {
@@ -79,15 +101,22 @@ p {
 	}
 }
 
+/* override the original bootrap design*/
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+    background-color: #FF6700;
+    color: white;
+    text-decoration: none;
+}
+
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color:$lightGray;
+	color: #FF6700;
   a {
-    color: #555;
+	color: #FF6700;
     &:hover { 
       color: #222;
     }
@@ -153,7 +182,14 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
+  color: #FF5300;
   @include box_sizing;
+}
+ 
+label {
+  color: #FF4700;
+  display: block;
+  margin-bottom: 5px;
 }
  
 #error_explanation {
@@ -168,3 +204,18 @@ input, textarea, select, .uneditable-input {
   @extend .control-group;
   @extend .error;
  }
+  /* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
