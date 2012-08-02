@@ -49,8 +49,11 @@ group :production do
 	gem 'pg'
 end
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'sunspot_rails', '~> 1.3.0'
+group :development do
+   gem 'sunspot_solr'
+ end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
