@@ -25,6 +25,12 @@ $grayLighter: #999;
     padding-right: 20px;
 }
 
+/* make check box as in a line*/
+	 input[type="check_box"], label{
+     float:left;
+		 width: 100px;
+   } 
+
 html {
   overflow-y: scroll;
 }
