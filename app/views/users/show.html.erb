@@ -8,4 +8,32 @@
       </h1>
      </section>
   </aside>
+	<aside class="span4">
+		<section>	
+			<%= form_tag("/search", :method=>"get") do %>		
+				<%= label_tag(:query, "Search for: ")%>
+				<%= text_field_tag(:query) %>	
+				<%= submit_tag("Search",class: "btn btn-l    arge btn-warning")%> 
+			<% end %>
+		
+		</section>
+	</aside>
+</div>
+<div class = "rows">
+
+	<aside class="span5">
+		<ul class="res">
+			<% if flash[:res_res]%>
+				<% flash[:res_res].each do |r| %>		
+					<li>
+						<%= r %>
+						<%= link_to r%>
+					</li>
+				<%end %>
+			<% else %>
+				<b> ? </b>
+		  <%end%>
+		</ul>
+	</aside>
+
 </div>

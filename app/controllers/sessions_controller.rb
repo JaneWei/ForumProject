@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'nokogiri'
 class SessionsController < ApplicationController
   def new
   end
@@ -25,6 +27,23 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_path, :notice => "You have logged out!"
   end
+
+	#def search
+	 #params[:query].downcase! 
+	 #@searchItem = params[:query]
+	 #@buzzilaAPI = "http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:"
+	 #@searchURL = @buzzilaAPI + @searchItem
+	 #if(@searchURL.eql?("http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:cars")) 
+	 #@searchResult = open(@searchURL,"UserAgent" => "Ruby-OpenURI").read
+	 #@links = Nokogiri::XML(@searchResult)
+	 #@res = @links.xpath("//item").map do |r|
+		#{'link'=> r.xpath('link').inner_text}
+   #end
+		 #redirect_to current_user, :notice => @res[10].to_s
+	 #else
+	   #redirect_to current_user, :notice => @searchURL , :notice => "Please Input again."
+	 #end
+	#end 
 
 
 end

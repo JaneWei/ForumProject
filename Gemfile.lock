@@ -221,6 +221,7 @@ DEPENDENCIES
   json
   mail
   mysql2
+  nokogiri
   pg
   rails (= 3.2.6)
   rb-fsevent
