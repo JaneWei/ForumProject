@@ -9,7 +9,6 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'taps'
 gem 'mail'
 gem 'nokogiri'
-gem 'pjumble'
 
 
 # Bundle edge Rails instead:
