@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'nokogiri'
 class UsersController < ApplicationController
  
   include SessionsHelper 
@@ -54,25 +56,24 @@ class UsersController < ApplicationController
     redirect_to users_path
   end 
     
-  def search
-    params[:query].downcase! 
-    @searchItem = params[:query]
-    @buzzilaAPI = "http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:"
-   @searchURL = @buzzilaAPI + @searchItem
-    if(@searchURL.eql?("http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:cars"))
-    @searchResult = open(@searchURL,"UserAgent" => "Ruby-OpenURI").read
-    @links = Nokogiri::XML(@searchResult)
-		@res = Array.new
-		@links.xpath("//item").each do |n|
-			@res << ( n.xpath("link").inner_text) 
-		end
-    #@res = @links.xpath("//item").map do |r|
-    #{'link'=> r.xpath('link').inner_text}
-    #end
-   redirect_to current_user, :notice => @res.class
-    else redirect_to current_user, :notice => @searchURL , :notice => "Please Input again." 
-		end
- 	end    
+  #def search
+    #params[:query].downcase! 
+    #@searchItem = params[:query]
+    #@buzzilaAPI = "http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:"
+   #@searchURL = @buzzilaAPI + @searchItem
+    #@searchResult = open(@searchURL,"UserAgent" => "Ruby-OpenURI").read
+    #@links = Nokogiri::XML(@searchResult)
+		#@res = Array.new
+		#@links.xpath("//item").each do |n|
+			#@res << ( n.xpath("link").inner_text) 
+		#end
+		#if @res
+			#session[:res] = @res
+    	#redirect_to current_user 
+    #else
+		  #redirect_to current_user, :notice => @searchURL , :notice => "Please Input again." 
+		#end
+ 	#end    
 
 
   private
