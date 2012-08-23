@@ -33,13 +33,18 @@ class SessionsController < ApplicationController
 	 params[:query].downcase! 
 	 @searchItem = params[:query]
 	 @searchItem.strip!
+	 @searchItem.gsub!("%20"," ")
 	 @searchItemTitle = params[:queryT]
+	 #@serachItemTitle = modifyTitle @searchItemTitle
+	 @searchItemTitle.strip!
 	 @buzzilaAPI = "http://api.buzzilla.com/buzzilla/query?token=de4bd5c9-cbe3-437d-b870-751141cdd803&dataType=xml&pageNum=1&sortBy=relevance&query=forum:"
 	 if !@searchItemTitle.empty?
 	   @searchURL = @buzzilaAPI + @searchItem + "%20intitle:" + @searchItemTitle
 	 else	
 			@searchURL = @buzzilaAPI + @searchItem
 	 end
+   # fix the whitspace bug
+	 @searchURL.gsub!(/ /,"%20") 
 
 	 #begin 
 		#status = Timeout::timeout(6){
@@ -60,6 +65,11 @@ class SessionsController < ApplicationController
 	    redirect_to current_user, :notice => @searchURL , :notice => "Please Input again."
 	 end
 	end 
+	
+	private
+			def modifyTitle words
+				
 
+			end
 
 end

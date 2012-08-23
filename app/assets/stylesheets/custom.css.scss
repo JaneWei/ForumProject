@@ -9,6 +9,7 @@ $grayLighter: #999;
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+
 /* override the original design of bootstrap*/
   .navbar-inner {
     background-color: #FF9900;
@@ -24,7 +25,6 @@ $grayLighter: #999;
     padding-left: 20px;
     padding-right: 20px;
 }
-
 /* make check box as in a line*/
 	 input[type="check_box"], label{
      float:left;
