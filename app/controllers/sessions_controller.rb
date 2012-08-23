@@ -56,6 +56,7 @@ class SessionsController < ApplicationController
 	 @links = Nokogiri::XML(@searchResult)
 	 @res = Array.new
 	 @links.xpath("//item").each do |n|
+     @res << ( n.xpath('title').inner_text)
 		 @res << ( n.xpath('link').inner_text )
    end
 	 if @res

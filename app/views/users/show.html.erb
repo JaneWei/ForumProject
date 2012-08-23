@@ -27,10 +27,14 @@
 			<% if session[:res]%>
 				<%if !session[:res][0].nil?%>
 				<% i = 0 %>
-				<% session[:res].each do |r| %>		
-					<% i=i+1 %>
-					<li>
-						<%=i%> <%= link_to r, r, :target=>"_blank" %>
+				<% session[:res].each do |r| %>	
+					 <li>
+						<% if r.start_with?("http") %>
+						<%= link_to r, r, :target=>"_blank" %>
+						<% else %>
+						<% i=i+1 %>
+						<h4><%=i %> Thread: <%=link_to r,href:"#"%></h4>
+						<%end%>
 					</li>
 					<%end%>
 				<% else %>
