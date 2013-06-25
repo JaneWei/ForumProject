@@ -60,7 +60,8 @@ group :test do
 end
 
 group :production do
-	gem 'pg'
+	#gem 'pg'
+  gem 'pg', '0.12.2'
 end
 
 gem 'sunspot_rails', '~> 1.3.0'
